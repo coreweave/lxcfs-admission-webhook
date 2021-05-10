@@ -75,12 +75,15 @@ var volumeMountsTemplate = []corev1.VolumeMount{
 		ReadOnly:  true,
 	},
 }
+
+var volumeHostPathType = corev1.HostPathFile
 var volumesTemplate = []corev1.Volume{
 	{
 		Name: "lxcfs-proc-cpuinfo",
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/cpuinfo",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -89,6 +92,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/diskstats",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -97,6 +101,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/meminfo",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -105,6 +110,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/stat",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -113,6 +119,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/swaps",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -121,6 +128,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/uptime",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -129,6 +137,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/proc/loadavg",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
@@ -137,6 +146,7 @@ var volumesTemplate = []corev1.Volume{
 		VolumeSource: corev1.VolumeSource{
 			HostPath: &corev1.HostPathVolumeSource{
 				Path: "/var/lib/lxcfs/sys/devices/system/cpu/online",
+				Type: &volumeHostPathType,
 			},
 		},
 	},
